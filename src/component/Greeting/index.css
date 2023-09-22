@@ -1,0 +1,19 @@
+.button {
+  height: 40px;
+  width: 122px;
+  border-radius: 25px;
+  border-color: #db1c48;
+  padding: 9px;
+  margin: 10px;
+}
+
+.displayButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  height: 200px;
+  width: 200px;
+}

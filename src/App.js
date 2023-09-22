@@ -28,12 +28,39 @@ const languageGreetingsList = [
 
 // Replace your code here
 class App extends Component {
+  state = {
+    activeId: languageGreetingsList[0].id,
+  }
+
+  onClickedButton = id => {
+    console.log(id)
+    this.setState({activeId: id})
+  }
+
   render() {
+    const {activeId} = this.state
+    console.log(activeId)
+    const detailsList = languageGreetingsList.filter(
+      each => each.id === activeId,
+    )
+
+    const {imageUrl, imageAltText} = detailsList
+    console.log(detailsList)
+
     return (
-      <div>
-        {languageGreetingsList.map(each => (
-          <Greeting details={each} />
-        ))}
+      <div className="container">
+        <h1>Multilingual Greeting</h1>
+        <div className="buttonRow">
+          {languageGreetingsList.map(each => (
+            <Greeting
+              details={each}
+              key={each.id}
+              imageUrl={imageUrl}
+              imageAltText={imageAltText}
+              onClickedButton={this.onClickedButton}
+            />
+          ))}
+        </div>
       </div>
     )
   }
