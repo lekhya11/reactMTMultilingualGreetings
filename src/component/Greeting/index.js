@@ -1,22 +1,27 @@
 import './index.css'
 
 const Greeting = props => {
-  const {details, onClickedButton, imageAltText, imageUrl} = props
+  const {details, onClickedButton, isActive} = props
   const {id, buttonText} = details
 
   const onButtonClicked = () => {
     console.log(id)
     onClickedButton(id)
   }
+
+  const buttonClassName = isActive ? 'buttonActive' : 'button'
   return (
-    <div>
+    <li>
       <div className="displayButton">
-        <button type="button" className="button" onClick={onButtonClicked}>
+        <button
+          type="button"
+          className={buttonClassName}
+          onClick={onButtonClicked}
+        >
           {buttonText}
         </button>
       </div>
-      <img src={imageUrl} alt={imageAltText} className="image" />
-    </div>
+    </li>
   )
 }
 

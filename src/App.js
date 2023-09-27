@@ -44,23 +44,23 @@ class App extends Component {
       each => each.id === activeId,
     )
 
-    const {imageUrl, imageAltText} = detailsList
-    console.log(detailsList)
+    const {imageUrl, imageAltText} = detailsList[0]
+    console.log(imageAltText)
 
     return (
       <div className="container">
-        <h1>Multilingual Greeting</h1>
-        <div className="buttonRow">
+        <h1>Multilingual Greetings</h1>
+        <ul className="buttonRow">
           {languageGreetingsList.map(each => (
             <Greeting
               details={each}
               key={each.id}
-              imageUrl={imageUrl}
-              imageAltText={imageAltText}
+              isActive={activeId === each.id}
               onClickedButton={this.onClickedButton}
             />
           ))}
-        </div>
+        </ul>
+        <img src={imageUrl} alt={imageAltText} className="image" />
       </div>
     )
   }

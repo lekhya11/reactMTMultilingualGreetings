@@ -7,6 +7,17 @@
   margin: 10px;
 }
 
+.buttonActive {
+  background-color: #db1c48;
+  color: white;
+  height: 40px;
+  width: 122px;
+  border-radius: 25px;
+  padding: 9px;
+  margin: 10px;
+  border: none;
+}
+
 .displayButton {
   display: flex;
   justify-content: center;
